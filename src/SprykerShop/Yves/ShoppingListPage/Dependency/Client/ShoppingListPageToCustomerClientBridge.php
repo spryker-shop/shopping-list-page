@@ -25,18 +25,18 @@ class ShoppingListPageToCustomerClientBridge implements ShoppingListPageToCustom
     }
 
     /**
-     * @return \Generated\Shared\Transfer\CustomerTransfer|null
-     */
-    public function getCustomer(): ?CustomerTransfer
-    {
-        return $this->customerClient->getCustomer();
-    }
-
-    /**
      * @return bool
      */
     public function isLoggedIn(): bool
     {
         return $this->customerClient->isLoggedIn();
+    }
+
+    /**
+     * @return \Generated\Shared\Transfer\CustomerTransfer|null
+     */
+    public function getCustomer(): ?CustomerTransfer
+    {
+        return $this->customerClient->getCustomer();
     }
 }
