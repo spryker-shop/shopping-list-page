@@ -5,19 +5,18 @@
  * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
  */
 
-namespace SprykerShop\Yves\ShoppingListPage\Plugin;
+namespace SprykerShop\Yves\ShoppingListPage\Dependency\Plugin\ProductOptionWidget;
 
 use Generated\Shared\Transfer\ShoppingListItemTransfer;
 use Spryker\Yves\Kernel\Dependency\Plugin\WidgetPluginInterface;
 
-/**
- * @deprecated Use \SprykerShop\Yves\ShoppingListNoteWidget\Widget\ShoppingListItemNoteWidget instead.
- */
-interface ShoppingListItemNoteWidgetPluginInterface extends WidgetPluginInterface
+interface ShoppingListItemProductOptionWidgetPluginInterface extends WidgetPluginInterface
 {
-    public const NAME = 'ShoppingListItemNoteWidgetPlugin';
+    public const NAME = 'ShoppingListItemProductOptionWidgetPlugin';
 
     /**
+     * @api
+     *
      * @param \Generated\Shared\Transfer\ShoppingListItemTransfer $shoppingListItemTransfer
      *
      * @return void
