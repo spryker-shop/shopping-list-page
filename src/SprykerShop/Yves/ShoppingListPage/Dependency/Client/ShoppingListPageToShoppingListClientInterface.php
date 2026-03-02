@@ -22,104 +22,38 @@ use Generated\Shared\Transfer\ShoppingListTransfer;
 
 interface ShoppingListPageToShoppingListClientInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListTransfer $shoppingListTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListResponseTransfer
-     */
     public function removeShoppingList(ShoppingListTransfer $shoppingListTransfer): ShoppingListResponseTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListTransfer $shoppingListTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListResponseTransfer
-     */
     public function clearShoppingList(ShoppingListTransfer $shoppingListTransfer): ShoppingListResponseTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListTransfer $shoppingListTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListShareResponseTransfer
-     */
     public function updateShoppingListSharedEntities(ShoppingListTransfer $shoppingListTransfer): ShoppingListShareResponseTransfer;
 
-    /**
-     * @return \Generated\Shared\Transfer\ShoppingListPermissionGroupCollectionTransfer
-     */
     public function getShoppingListPermissionGroups(): ShoppingListPermissionGroupCollectionTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListItemCollectionTransfer $shoppingListItemCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListItemCollectionTransfer
-     */
     public function getShoppingListItemCollectionTransfer(
         ShoppingListItemCollectionTransfer $shoppingListItemCollectionTransfer
     ): ShoppingListItemCollectionTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListCollectionTransfer $shoppingListCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListItemCollectionTransfer
-     */
     public function getShoppingListItemCollection(ShoppingListCollectionTransfer $shoppingListCollectionTransfer): ShoppingListItemCollectionTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListTransfer $shoppingListTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListResponseTransfer
-     */
     public function createShoppingList(ShoppingListTransfer $shoppingListTransfer): ShoppingListResponseTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListTransfer $shoppingListTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListResponseTransfer
-     */
     public function updateShoppingList(ShoppingListTransfer $shoppingListTransfer): ShoppingListResponseTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListItemTransfer $shoppingListItemTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListItemResponseTransfer
-     */
     public function removeItemById(ShoppingListItemTransfer $shoppingListItemTransfer): ShoppingListItemResponseTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListTransfer $shoppingListTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListTransfer
-     */
     public function getShoppingList(ShoppingListTransfer $shoppingListTransfer): ShoppingListTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListOverviewRequestTransfer $shoppingListOverviewRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListOverviewResponseTransfer
-     */
     public function getShoppingListOverviewWithoutProductDetails(
         ShoppingListOverviewRequestTransfer $shoppingListOverviewRequestTransfer
     ): ShoppingListOverviewResponseTransfer;
 
-    /**
-     * @return \Generated\Shared\Transfer\ShoppingListCollectionTransfer
-     */
     public function getCustomerShoppingListCollection(): ShoppingListCollectionTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListAddToCartRequestCollectionTransfer $shoppingListAddToCartRequestCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListAddToCartRequestCollectionTransfer
-     */
     public function addItemCollectionToCart(
         ShoppingListAddToCartRequestCollectionTransfer $shoppingListAddToCartRequestCollectionTransfer
     ): ShoppingListAddToCartRequestCollectionTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListDismissRequestTransfer $shoppingListDismissRequest
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListShareResponseTransfer
-     */
     public function dismissShoppingListSharing(ShoppingListDismissRequestTransfer $shoppingListDismissRequest): ShoppingListShareResponseTransfer;
 
     /**

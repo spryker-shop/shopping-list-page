@@ -24,19 +24,11 @@ class ShoppingListPageToMultiCartClientBridge implements ShoppingListPageToMulti
         $this->multiCartClient = $multiCartClient;
     }
 
-    /**
-     * @param int $idQuote
-     *
-     * @return \Generated\Shared\Transfer\QuoteTransfer|null
-     */
     public function findQuoteById(int $idQuote): ?QuoteTransfer
     {
         return $this->multiCartClient->findQuoteById($idQuote);
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\QuoteTransfer
-     */
     public function getDefaultCart(): QuoteTransfer
     {
         return $this->multiCartClient->getDefaultCart();

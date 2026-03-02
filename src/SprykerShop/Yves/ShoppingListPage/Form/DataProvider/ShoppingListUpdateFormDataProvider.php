@@ -17,9 +17,6 @@ class ShoppingListUpdateFormDataProvider
      */
     protected ShoppingListPageToLocaleClientInterface $localeClient;
 
-    /**
-     * @param \SprykerShop\Yves\ShoppingListPage\Dependency\Client\ShoppingListPageToLocaleClientInterface $localeClient
-     */
     public function __construct(ShoppingListPageToLocaleClientInterface $localeClient)
     {
         $this->localeClient = $localeClient;

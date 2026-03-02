@@ -35,11 +35,6 @@ class ShoppingListForm extends AbstractType
      */
     public const VALIDATION_MAX_LENGTH_MESSAGE = 'validation.max_length.singular|validation.max_length.plural';
 
-    /**
-     * @param \Symfony\Component\OptionsResolver\OptionsResolver $resolver
-     *
-     * @return void
-     */
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([

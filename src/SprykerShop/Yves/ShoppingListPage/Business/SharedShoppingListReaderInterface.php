@@ -12,11 +12,5 @@ use Generated\Shared\Transfer\ShoppingListTransfer;
 
 interface SharedShoppingListReaderInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListTransfer $shoppingListTransfer
-     * @param \Generated\Shared\Transfer\CustomerTransfer $customerTransfer
-     *
-     * @return array
-     */
     public function getSharedShoppingListEntities(ShoppingListTransfer $shoppingListTransfer, CustomerTransfer $customerTransfer): array;
 }

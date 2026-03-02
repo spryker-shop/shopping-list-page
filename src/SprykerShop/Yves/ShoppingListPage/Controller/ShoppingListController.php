@@ -200,13 +200,6 @@ class ShoppingListController extends AbstractShoppingListController
         ];
     }
 
-    /**
-     * @param int $idShoppingList
-     * @param int $idShoppingListItem
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
-     */
     public function removeItemAction(int $idShoppingList, int $idShoppingListItem, Request $request): RedirectResponse
     {
         $removeItemForm = $this->getFactory()->getShoppingListRemoveItemForm()->handleRequest($request);
@@ -243,11 +236,6 @@ class ShoppingListController extends AbstractShoppingListController
         ]);
     }
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
-     */
     public function addToCartAction(Request $request): RedirectResponse
     {
         $addItemToCartForm = $this->getFactory()->getShoppingListAddItemToCartForm()->handleRequest($request);
@@ -348,11 +336,6 @@ class ShoppingListController extends AbstractShoppingListController
         return $shoppingListItems;
     }
 
-    /**
-     * @param int $idShoppingList
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListOverviewResponseTransfer
-     */
     protected function getShoppingListOverviewResponseTransfer(int $idShoppingList): ShoppingListOverviewResponseTransfer
     {
         $shoppingListTransfer = (new ShoppingListTransfer())
@@ -369,12 +352,6 @@ class ShoppingListController extends AbstractShoppingListController
         return $shoppingListOverviewResponseTransfer;
     }
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     * @param string $sku
-     *
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
-     */
     public function quickAddToShoppingListAction(Request $request, string $sku): RedirectResponse
     {
         $quantity = $request->get('quantity', 1);
@@ -397,11 +374,6 @@ class ShoppingListController extends AbstractShoppingListController
         return $this->getQuickAddToShoppingListRedirectResponse($shoppingListItemTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListItemTransfer $shoppingListItemTransfer
-     *
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
-     */
     protected function getQuickAddToShoppingListRedirectResponse(ShoppingListItemTransfer $shoppingListItemTransfer): RedirectResponse
     {
         if (!$shoppingListItemTransfer->getFkShoppingList()) {
@@ -413,11 +385,6 @@ class ShoppingListController extends AbstractShoppingListController
         ]);
     }
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return int|null
-     */
     protected function getShoppingListIdFromRequest(Request $request): ?int
     {
         $additionalRequestParams = $this->getFactory()->getUtilEncodingService()->decodeJson(
@@ -434,14 +401,6 @@ class ShoppingListController extends AbstractShoppingListController
         return null;
     }
 
-    /**
-     * @param string $sku
-     * @param int $quantity
-     * @param int $idShoppingList
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListItemTransfer
-     */
     protected function executeQuickAddToShoppingListAction(string $sku, int $quantity, int $idShoppingList, Request $request): ShoppingListItemTransfer
     {
         $customerTransfer = $this->getCustomer();

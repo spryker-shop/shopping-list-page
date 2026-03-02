@@ -33,11 +33,6 @@ class ShoppingListDismissController extends AbstractShoppingListController
      */
     protected const ROUTE_SHOPPING_LIST = 'shopping-list';
 
-    /**
-     * @param int $idShoppingList
-     *
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
-     */
     public function dismissAction(int $idShoppingList): RedirectResponse
     {
         $customerTransfer = $this->getCustomer();

@@ -12,10 +12,5 @@ use Symfony\Component\HttpFoundation\Request;
 
 interface AddToCartFormHandlerInterface
 {
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListItemCollectionTransfer
-     */
     public function handleAddToCartRequest(Request $request): ShoppingListItemCollectionTransfer;
 }

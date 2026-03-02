@@ -25,10 +25,6 @@ class AddToCartHandler implements AddToCartHandlerInterface
      */
     protected $customerClient;
 
-    /**
-     * @param \SprykerShop\Yves\ShoppingListPage\Dependency\Client\ShoppingListPageToShoppingListClientInterface $shoppingListClient
-     * @param \SprykerShop\Yves\ShoppingListPage\Dependency\Client\ShoppingListPageToCustomerClientInterface $customerClient
-     */
     public function __construct(
         ShoppingListPageToShoppingListClientInterface $shoppingListClient,
         ShoppingListPageToCustomerClientInterface $customerClient
@@ -80,11 +76,6 @@ class AddToCartHandler implements AddToCartHandlerInterface
         return $shoppingListMoveToCartRequestCollectionTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListItemTransfer $shoppingListItemTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListAddToCartRequestTransfer
-     */
     protected function createShoppingListMoveToCartRequestTransfer(ShoppingListItemTransfer $shoppingListItemTransfer): ShoppingListAddToCartRequestTransfer
     {
         return (new ShoppingListAddToCartRequestTransfer())

@@ -42,11 +42,6 @@ class ShoppingListUpdateForm extends AbstractType
      */
     public const OPTION_LOCALE = 'locale';
 
-    /**
-     * @param \Symfony\Component\OptionsResolver\OptionsResolver $resolver
-     *
-     * @return void
-     */
     public function configureOptions(OptionsResolver $resolver): void
     {
         parent::configureOptions($resolver);
@@ -70,11 +65,6 @@ class ShoppingListUpdateForm extends AbstractType
         $this->addItemsField($builder, $options);
     }
 
-    /**
-     * @param \Symfony\Component\Form\FormBuilderInterface $builder
-     *
-     * @return void
-     */
     protected function addNameField(FormBuilderInterface $builder): void
     {
         $builder->add(static::FIELD_NAME, TextType::class, [
@@ -86,11 +76,6 @@ class ShoppingListUpdateForm extends AbstractType
         ]);
     }
 
-    /**
-     * @param \Symfony\Component\Form\FormBuilderInterface $builder
-     *
-     * @return void
-     */
     protected function addIdField(FormBuilderInterface $builder): void
     {
         $builder->add(static::FIELD_ID, HiddenType::class);

@@ -256,11 +256,6 @@ class ShoppingListOverviewController extends AbstractShoppingListController
         ]);
     }
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
-     */
     public function addShoppingListToCartAction(Request $request): RedirectResponse
     {
         $addShoppingListToCartForm = $this->getFactory()->getAddShoppingListToCartForm()->handleRequest($request);
@@ -370,11 +365,6 @@ class ShoppingListOverviewController extends AbstractShoppingListController
         return $productViewTransfers;
     }
 
-    /**
-     * @param \Symfony\Component\Form\FormInterface $shoppingListForm
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListTransfer
-     */
     protected function getShoppingListTransfer(FormInterface $shoppingListForm): ShoppingListTransfer
     {
         $customerTransfer = $this->getCustomer();
@@ -387,11 +377,6 @@ class ShoppingListOverviewController extends AbstractShoppingListController
         return $shoppingListTransfer;
     }
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListCollectionTransfer
-     */
     protected function getShoppingListCollectionTransfer(Request $request): ShoppingListCollectionTransfer
     {
         $shoppingListIds = $request->get(static::PARAM_SHOPPING_LISTS);
@@ -411,9 +396,6 @@ class ShoppingListOverviewController extends AbstractShoppingListController
         return $shoppingListCollectionTransfer;
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\ShoppingListCollectionTransfer
-     */
     protected function getCustomerShoppingListCollection(): ShoppingListCollectionTransfer
     {
         return $this->getFactory()
@@ -421,11 +403,6 @@ class ShoppingListOverviewController extends AbstractShoppingListController
             ->getCustomerShoppingListCollection();
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListResponseTransfer $shoppingListResponseTransfer
-     *
-     * @return void
-     */
     protected function handleResponseErrors(ShoppingListResponseTransfer $shoppingListResponseTransfer): void
     {
         foreach ($shoppingListResponseTransfer->getErrors() as $error) {
@@ -433,12 +410,6 @@ class ShoppingListOverviewController extends AbstractShoppingListController
         }
     }
 
-    /**
-     * @param int $idShoppingList
-     * @param \Generated\Shared\Transfer\ShoppingListCollectionTransfer $shoppingListTransferCollection
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListTransfer
-     */
     protected function getShoppingListById(int $idShoppingList, ShoppingListCollectionTransfer $shoppingListTransferCollection): ShoppingListTransfer
     {
         foreach ($shoppingListTransferCollection->getShoppingLists() as $shoppingListTransfer) {

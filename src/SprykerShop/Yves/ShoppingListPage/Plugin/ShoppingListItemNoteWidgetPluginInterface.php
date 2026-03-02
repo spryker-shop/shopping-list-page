@@ -20,10 +20,5 @@ interface ShoppingListItemNoteWidgetPluginInterface extends WidgetPluginInterfac
      */
     public const NAME = 'ShoppingListItemNoteWidgetPlugin';
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListItemTransfer $shoppingListItemTransfer
-     *
-     * @return void
-     */
     public function initialize(ShoppingListItemTransfer $shoppingListItemTransfer): void;
 }

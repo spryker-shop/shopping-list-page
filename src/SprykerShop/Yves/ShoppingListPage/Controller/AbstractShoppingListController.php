@@ -39,9 +39,6 @@ class AbstractShoppingListController extends AbstractController
         }
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\CustomerTransfer|null
-     */
     protected function getCustomer(): ?CustomerTransfer
     {
         return $this->getFactory()
@@ -49,11 +46,6 @@ class AbstractShoppingListController extends AbstractController
             ->getCustomer();
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListItemTransfer $shoppingListItemTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductViewTransfer
-     */
     protected function createProductView(ShoppingListItemTransfer $shoppingListItemTransfer): ProductViewTransfer
     {
         $productViewTransfer = new ProductViewTransfer();

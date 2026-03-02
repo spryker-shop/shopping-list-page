@@ -229,11 +229,6 @@ class ShoppingListPageRouteProviderPlugin extends AbstractRouteProviderPlugin
         return $routeCollection;
     }
 
-    /**
-     * @param \Spryker\Yves\Router\Route\RouteCollection $routeCollection
-     *
-     * @return \Spryker\Yves\Router\Route\RouteCollection
-     */
     protected function addShoppingListRoute(RouteCollection $routeCollection): RouteCollection
     {
         $route = $this->buildRoute('/shopping-list', 'ShoppingListPage', 'ShoppingListOverview', 'indexAction');
@@ -242,11 +237,6 @@ class ShoppingListPageRouteProviderPlugin extends AbstractRouteProviderPlugin
         return $routeCollection;
     }
 
-    /**
-     * @param \Spryker\Yves\Router\Route\RouteCollection $routeCollection
-     *
-     * @return \Spryker\Yves\Router\Route\RouteCollection
-     */
     protected function addShoppingListUpdateRoute(RouteCollection $routeCollection): RouteCollection
     {
         $route = $this->buildRoute('/shopping-list/update/{idShoppingList}', 'ShoppingListPage', 'ShoppingListOverview', 'updateAction');
@@ -256,11 +246,6 @@ class ShoppingListPageRouteProviderPlugin extends AbstractRouteProviderPlugin
         return $routeCollection;
     }
 
-    /**
-     * @param \Spryker\Yves\Router\Route\RouteCollection $routeCollection
-     *
-     * @return \Spryker\Yves\Router\Route\RouteCollection
-     */
     protected function addShoppingListDeleteRoute(RouteCollection $routeCollection): RouteCollection
     {
         $route = $this->buildPostRoute('/shopping-list/delete/{idShoppingList}', 'ShoppingListPage', 'ShoppingListDelete', 'deleteAction');
@@ -270,11 +255,6 @@ class ShoppingListPageRouteProviderPlugin extends AbstractRouteProviderPlugin
         return $routeCollection;
     }
 
-    /**
-     * @param \Spryker\Yves\Router\Route\RouteCollection $routeCollection
-     *
-     * @return \Spryker\Yves\Router\Route\RouteCollection
-     */
     protected function addShoppingListDeleteConfirmRoute(RouteCollection $routeCollection): RouteCollection
     {
         $route = $this->buildRoute('/shopping-list/delete/{idShoppingList}/confirm', 'ShoppingListPage', 'ShoppingListDelete', 'deleteConfirmAction');
@@ -284,11 +264,6 @@ class ShoppingListPageRouteProviderPlugin extends AbstractRouteProviderPlugin
         return $routeCollection;
     }
 
-    /**
-     * @param \Spryker\Yves\Router\Route\RouteCollection $routeCollection
-     *
-     * @return \Spryker\Yves\Router\Route\RouteCollection
-     */
     protected function addShoppingListAddListsToCartRoute(RouteCollection $routeCollection): RouteCollection
     {
         $route = $this->buildRoute('/shopping-list/add-shopping-list-to-cart', 'ShoppingListPage', 'ShoppingListOverview', 'addShoppingListToCartAction');
@@ -297,11 +272,6 @@ class ShoppingListPageRouteProviderPlugin extends AbstractRouteProviderPlugin
         return $routeCollection;
     }
 
-    /**
-     * @param \Spryker\Yves\Router\Route\RouteCollection $routeCollection
-     *
-     * @return \Spryker\Yves\Router\Route\RouteCollection
-     */
     protected function addShoppingListDetailsRoute(RouteCollection $routeCollection): RouteCollection
     {
         $route = $this->buildRoute('/shopping-list/details/{idShoppingList}', 'ShoppingListPage', 'ShoppingList', 'indexAction');
@@ -311,11 +281,6 @@ class ShoppingListPageRouteProviderPlugin extends AbstractRouteProviderPlugin
         return $routeCollection;
     }
 
-    /**
-     * @param \Spryker\Yves\Router\Route\RouteCollection $routeCollection
-     *
-     * @return \Spryker\Yves\Router\Route\RouteCollection
-     */
     protected function addShoppingListClearRoute(RouteCollection $routeCollection): RouteCollection
     {
         $route = $this->buildRoute('/shopping-list/clear/{idShoppingList}', 'ShoppingListPage', 'ShoppingListOverview', 'clearAction');
@@ -326,11 +291,6 @@ class ShoppingListPageRouteProviderPlugin extends AbstractRouteProviderPlugin
         return $routeCollection;
     }
 
-    /**
-     * @param \Spryker\Yves\Router\Route\RouteCollection $routeCollection
-     *
-     * @return \Spryker\Yves\Router\Route\RouteCollection
-     */
     protected function addShoppingListRemoveItemRoute(RouteCollection $routeCollection): RouteCollection
     {
         $route = $this->buildRoute('/shopping-list/remove-item/{idShoppingList}/{idShoppingListItem}', 'ShoppingListPage', 'ShoppingList', 'removeItemAction');
@@ -342,11 +302,6 @@ class ShoppingListPageRouteProviderPlugin extends AbstractRouteProviderPlugin
         return $routeCollection;
     }
 
-    /**
-     * @param \Spryker\Yves\Router\Route\RouteCollection $routeCollection
-     *
-     * @return \Spryker\Yves\Router\Route\RouteCollection
-     */
     protected function addShoppingListAddToCartRoute(RouteCollection $routeCollection): RouteCollection
     {
         $route = $this->buildRoute('/shopping-list/add-to-cart', 'ShoppingListPage', 'ShoppingList', 'addToCartAction');
@@ -356,11 +311,6 @@ class ShoppingListPageRouteProviderPlugin extends AbstractRouteProviderPlugin
         return $routeCollection;
     }
 
-    /**
-     * @param \Spryker\Yves\Router\Route\RouteCollection $routeCollection
-     *
-     * @return \Spryker\Yves\Router\Route\RouteCollection
-     */
     protected function addShoppingListShareRoute(RouteCollection $routeCollection): RouteCollection
     {
         $route = $this->buildRoute('/shopping-list/share/{idShoppingList}', 'ShoppingListPage', 'ShoppingListOverview', 'shareShoppingListAction');
@@ -370,11 +320,6 @@ class ShoppingListPageRouteProviderPlugin extends AbstractRouteProviderPlugin
         return $routeCollection;
     }
 
-    /**
-     * @param \Spryker\Yves\Router\Route\RouteCollection $routeCollection
-     *
-     * @return \Spryker\Yves\Router\Route\RouteCollection
-     */
     protected function addShoppingListPrintRoute(RouteCollection $routeCollection): RouteCollection
     {
         $route = $this->buildRoute('/shopping-list/print/{idShoppingList}', 'ShoppingListPage', 'ShoppingList', 'printShoppingListAction');
@@ -384,11 +329,6 @@ class ShoppingListPageRouteProviderPlugin extends AbstractRouteProviderPlugin
         return $routeCollection;
     }
 
-    /**
-     * @param \Spryker\Yves\Router\Route\RouteCollection $routeCollection
-     *
-     * @return \Spryker\Yves\Router\Route\RouteCollection
-     */
     protected function addCreateShoppingListFromCartRoute(RouteCollection $routeCollection): RouteCollection
     {
         $route = $this->buildRoute('/shopping-list/create-from-exist-cart/{idQuote}', 'ShoppingListPage', 'CartToShoppingList', 'createFromCartAction');
@@ -398,11 +338,6 @@ class ShoppingListPageRouteProviderPlugin extends AbstractRouteProviderPlugin
         return $routeCollection;
     }
 
-    /**
-     * @param \Spryker\Yves\Router\Route\RouteCollection $routeCollection
-     *
-     * @return \Spryker\Yves\Router\Route\RouteCollection
-     */
     protected function addShoppingListDismissRoute(RouteCollection $routeCollection): RouteCollection
     {
         $route = $this->buildRoute('/shopping-list/dismiss/{idShoppingList}', 'ShoppingListPage', 'ShoppingListDismiss', 'DismissAction');
@@ -412,11 +347,6 @@ class ShoppingListPageRouteProviderPlugin extends AbstractRouteProviderPlugin
         return $routeCollection;
     }
 
-    /**
-     * @param \Spryker\Yves\Router\Route\RouteCollection $routeCollection
-     *
-     * @return \Spryker\Yves\Router\Route\RouteCollection
-     */
     protected function addShoppingListDismissConfirmRoute(RouteCollection $routeCollection): RouteCollection
     {
         $route = $this->buildRoute('/shopping-list/dismiss-confirm/{idShoppingList}', 'ShoppingListPage', 'ShoppingListDismiss', 'DismissConfirmAction');

@@ -39,11 +39,6 @@ class ShoppingListBusinessUnitShareEditForm extends AbstractType
      */
     protected const FIELD_ID_SHOPPING_LIST_PERMISSION_GROUP = 'idShoppingListPermissionGroup';
 
-    /**
-     * @param \Symfony\Component\OptionsResolver\OptionsResolver $resolver
-     *
-     * @return void
-     */
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefined(ShareShoppingListForm::OPTION_PERMISSION_GROUPS);

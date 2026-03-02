@@ -67,12 +67,6 @@ class ShareShoppingListDataProvider
      */
     protected $shoppingListClient;
 
-    /**
-     * @param \SprykerShop\Yves\ShoppingListPage\Dependency\Client\ShoppingListPageToCompanyBusinessUnitClientInterface $companyBusinessUnitClient
-     * @param \SprykerShop\Yves\ShoppingListPage\Dependency\Client\ShoppingListPageToCompanyUserClientInterface $companyUserClient
-     * @param \SprykerShop\Yves\ShoppingListPage\Dependency\Client\ShoppingListPageToCustomerClientInterface $customerClient
-     * @param \SprykerShop\Yves\ShoppingListPage\Dependency\Client\ShoppingListPageToShoppingListClientInterface $shoppingListClient
-     */
     public function __construct(
         ShoppingListPageToCompanyBusinessUnitClientInterface $companyBusinessUnitClient,
         ShoppingListPageToCompanyUserClientInterface $companyUserClient,
@@ -85,11 +79,6 @@ class ShareShoppingListDataProvider
         $this->shoppingListClient = $shoppingListClient;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListTransfer $shoppingListTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListTransfer
-     */
     public function getData(ShoppingListTransfer $shoppingListTransfer): ShoppingListTransfer
     {
         $customerTransfer = $this->getCustomer();
@@ -116,20 +105,11 @@ class ShareShoppingListDataProvider
         ];
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\CustomerTransfer
-     */
     protected function getCustomer(): CustomerTransfer
     {
         return $this->customerClient->getCustomer();
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListTransfer $shoppingListTransfer
-     * @param \Generated\Shared\Transfer\CustomerTransfer $customerTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListTransfer
-     */
     protected function expandSharedCompanyUsers(
         ShoppingListTransfer $shoppingListTransfer,
         CustomerTransfer $customerTransfer
@@ -165,12 +145,6 @@ class ShareShoppingListDataProvider
         return $shoppingListTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListTransfer $shoppingListTransfer
-     * @param \Generated\Shared\Transfer\CompanyUserTransfer $companyUserTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListCompanyUserTransfer
-     */
     protected function createShoppingListCompanyUser(
         ShoppingListTransfer $shoppingListTransfer,
         CompanyUserTransfer $companyUserTransfer
@@ -181,11 +155,6 @@ class ShareShoppingListDataProvider
             ->setCompanyUser($companyUserTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListTransfer $shoppingListTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListTransfer
-     */
     protected function sortShoppingListCompanyUsers(ShoppingListTransfer $shoppingListTransfer): ShoppingListTransfer
     {
         $shoppingListTransfer->getSharedCompanyUsers()->uasort(
@@ -197,12 +166,6 @@ class ShareShoppingListDataProvider
         return $shoppingListTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListTransfer $shoppingListTransfer
-     * @param \Generated\Shared\Transfer\CustomerTransfer $customerTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListTransfer
-     */
     protected function expandSharedCompanyBusinessUnits(
         ShoppingListTransfer $shoppingListTransfer,
         CustomerTransfer $customerTransfer
@@ -265,12 +228,6 @@ class ShareShoppingListDataProvider
         return $sharedCompanyBusinessUnits;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListTransfer $shoppingListTransfer
-     * @param \Generated\Shared\Transfer\CompanyBusinessUnitTransfer $companyBusinessUnitTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListCompanyBusinessUnitTransfer
-     */
     protected function createShoppingListCompanyBusinessUnit(
         ShoppingListTransfer $shoppingListTransfer,
         CompanyBusinessUnitTransfer $companyBusinessUnitTransfer
@@ -281,11 +238,6 @@ class ShareShoppingListDataProvider
             ->setCompanyBusinessUnit($companyBusinessUnitTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListTransfer $shoppingListTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListTransfer
-     */
     protected function sortShoppingListCompanyBusinessUnit(ShoppingListTransfer $shoppingListTransfer): ShoppingListTransfer
     {
         $shoppingListTransfer->getSharedCompanyBusinessUnits()->uasort(
@@ -297,11 +249,6 @@ class ShareShoppingListDataProvider
         return $shoppingListTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CustomerTransfer $customerTransfer
-     *
-     * @return \Generated\Shared\Transfer\CompanyBusinessUnitCollectionTransfer
-     */
     protected function getCompanyBusinessUnitCollection(CustomerTransfer $customerTransfer): CompanyBusinessUnitCollectionTransfer
     {
         $idCompany = $customerTransfer->requireCompanyUserTransfer()->getCompanyUserTransfer()->getFkCompany();
@@ -316,11 +263,6 @@ class ShareShoppingListDataProvider
         return $this->companyBusinessUnitClient->getCompanyBusinessUnitCollection($companyBusinessUnitCriteriaFilterTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CustomerTransfer $customerTransfer
-     *
-     * @return \Generated\Shared\Transfer\CompanyUserCollectionTransfer
-     */
     protected function getCompanyUserCollection(CustomerTransfer $customerTransfer): CompanyUserCollectionTransfer
     {
         $companyUserCriteriaFilterTransfer = (new CompanyUserCriteriaFilterTransfer())

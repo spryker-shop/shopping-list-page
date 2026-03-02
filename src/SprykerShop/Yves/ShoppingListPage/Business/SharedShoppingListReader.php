@@ -37,10 +37,6 @@ class SharedShoppingListReader implements SharedShoppingListReaderInterface
      */
     protected $companyBusinessUnitClient;
 
-    /**
-     * @param \SprykerShop\Yves\ShoppingListPage\Dependency\Client\ShoppingListPageToCompanyUserClientInterface $companyUserClient
-     * @param \SprykerShop\Yves\ShoppingListPage\Dependency\Client\ShoppingListPageToCompanyBusinessUnitClientInterface $companyBusinessUnitClient
-     */
     public function __construct(
         ShoppingListPageToCompanyUserClientInterface $companyUserClient,
         ShoppingListPageToCompanyBusinessUnitClientInterface $companyBusinessUnitClient

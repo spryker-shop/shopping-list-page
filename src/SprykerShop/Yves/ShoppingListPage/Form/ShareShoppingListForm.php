@@ -34,11 +34,6 @@ class ShareShoppingListForm extends AbstractType
      */
     public const FIELD_COMPANY_USERS = 'sharedCompanyUsers';
 
-    /**
-     * @param \Symfony\Component\OptionsResolver\OptionsResolver $resolver
-     *
-     * @return void
-     */
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefined(static::OPTION_PERMISSION_GROUPS);

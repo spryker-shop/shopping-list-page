@@ -96,11 +96,6 @@ class ShoppingListPageDependencyProvider extends AbstractBundleDependencyProvide
      */
     public const SERVICE_UTIL_NUMBER = 'SERVICE_UTIL_NUMBER';
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     public function provideDependencies(Container $container): Container
     {
         $container = parent::provideDependencies($container);
@@ -123,11 +118,6 @@ class ShoppingListPageDependencyProvider extends AbstractBundleDependencyProvide
         return $container;
     }
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     protected function addCustomerClient(Container $container): Container
     {
         $container->set(static::CLIENT_CUSTOMER, function (Container $container) {
@@ -137,11 +127,6 @@ class ShoppingListPageDependencyProvider extends AbstractBundleDependencyProvide
         return $container;
     }
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     protected function addZedRequestClient(Container $container): Container
     {
         $container->set(static::CLIENT_ZED_REQUEST, function (Container $container) {
@@ -151,11 +136,6 @@ class ShoppingListPageDependencyProvider extends AbstractBundleDependencyProvide
         return $container;
     }
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     protected function addShoppingListClient(Container $container): Container
     {
         $container->set(static::CLIENT_SHOPPING_LIST, function (Container $container) {
@@ -165,11 +145,6 @@ class ShoppingListPageDependencyProvider extends AbstractBundleDependencyProvide
         return $container;
     }
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     protected function addProductStorageClient(Container $container): Container
     {
         $container->set(static::CLIENT_PRODUCT_STORAGE, function (Container $container) {
@@ -179,11 +154,6 @@ class ShoppingListPageDependencyProvider extends AbstractBundleDependencyProvide
         return $container;
     }
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     protected function addCompanyBusinessUnitClient(Container $container): Container
     {
         $container->set(static::CLIENT_COMPANY_BUSINESS_UNIT, function (Container $container) {
@@ -193,11 +163,6 @@ class ShoppingListPageDependencyProvider extends AbstractBundleDependencyProvide
         return $container;
     }
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     protected function addCompanyUserClient(Container $container): Container
     {
         $container->set(static::CLIENT_COMPANY_USER, function (Container $container) {
@@ -207,11 +172,6 @@ class ShoppingListPageDependencyProvider extends AbstractBundleDependencyProvide
         return $container;
     }
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     protected function addPriceClient(Container $container): Container
     {
         $container->set(static::CLIENT_PRICE, function (Container $container) {
@@ -223,11 +183,6 @@ class ShoppingListPageDependencyProvider extends AbstractBundleDependencyProvide
         return $container;
     }
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     protected function addShoppingListItemExpanderPlugins(Container $container): Container
     {
         $container->set(static::PLUGIN_SHOPPING_LIST_ITEM_EXPANDERS, function () {
@@ -245,11 +200,6 @@ class ShoppingListPageDependencyProvider extends AbstractBundleDependencyProvide
         return [];
     }
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     protected function addShoppingListItemFormExpanderPlugins(Container $container): Container
     {
         $container->set(static::PLUGIN_SHOPPING_LIST_ITEM_FORM_EXPANDERS, function () {
@@ -259,11 +209,6 @@ class ShoppingListPageDependencyProvider extends AbstractBundleDependencyProvide
         return $container;
     }
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     protected function addMultiCartClient(Container $container): Container
     {
         $container->set(static::CLIENT_MULTI_CART, function (Container $container) {
@@ -273,11 +218,6 @@ class ShoppingListPageDependencyProvider extends AbstractBundleDependencyProvide
         return $container;
     }
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     protected function addUtilEncodingService(Container $container): Container
     {
         $container->set(static::SERVICE_UTIL_ENCODING, function (Container $container) {
@@ -289,11 +229,6 @@ class ShoppingListPageDependencyProvider extends AbstractBundleDependencyProvide
         return $container;
     }
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     protected function addShoppingListFormDataProviderMapperPlugins(Container $container): Container
     {
         $container->set(static::PLUGIN_SHOPPING_LIST_FORM_DATA_PROVIDER_MAPPERS, function () {
@@ -319,11 +254,6 @@ class ShoppingListPageDependencyProvider extends AbstractBundleDependencyProvide
         return [];
     }
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     protected function addLocaleClient(Container $container): Container
     {
         $container->set(static::CLIENT_LOCALE, function (Container $container) {
@@ -335,11 +265,6 @@ class ShoppingListPageDependencyProvider extends AbstractBundleDependencyProvide
         return $container;
     }
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     protected function addUtilNumberService(Container $container): Container
     {
         $container->set(static::SERVICE_UTIL_NUMBER, function (Container $container) {

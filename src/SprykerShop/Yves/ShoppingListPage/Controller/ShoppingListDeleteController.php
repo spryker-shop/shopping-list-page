@@ -35,12 +35,6 @@ class ShoppingListDeleteController extends AbstractShoppingListController
      */
     protected const ROUTE_SHOPPING_LIST = 'shopping-list';
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     * @param int $idShoppingList
-     *
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
-     */
     public function deleteAction(Request $request, int $idShoppingList): RedirectResponse
     {
         $shoppingListDeleteForm = $this->getFactory()
@@ -74,11 +68,6 @@ class ShoppingListDeleteController extends AbstractShoppingListController
         return $this->redirectResponseInternal(static::ROUTE_SHOPPING_LIST);
     }
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return \Spryker\Yves\Kernel\View\View
-     */
     public function deleteConfirmAction(Request $request): View
     {
         $response = $this->executeDeleteConfirmAction($request);

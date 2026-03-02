@@ -25,46 +25,27 @@ class ShoppingListDismissWidget extends AbstractWidget
      */
     protected const PARAMETER_IS_OWNER = 'isOwner';
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListTransfer $shoppingListTransfer
-     */
     public function __construct(ShoppingListTransfer $shoppingListTransfer)
     {
         $this->addShoppingListParam($shoppingListTransfer);
         $this->addIsCustomerShoppingListOwnerParam($shoppingListTransfer);
     }
 
-    /**
-     * @return string
-     */
     public static function getName(): string
     {
         return 'ShoppingListDismissWidget';
     }
 
-    /**
-     * @return string
-     */
     public static function getTemplate(): string
     {
         return '@ShoppingListPage/views/shopping-list-dismiss-link/shopping-list-dismiss-link.twig';
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListTransfer $shoppingListTransfer
-     *
-     * @return void
-     */
     protected function addShoppingListParam(ShoppingListTransfer $shoppingListTransfer): void
     {
         $this->addParameter(static::PARAMETER_SHOPPING_LIST, $shoppingListTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListTransfer $shoppingListTransfer
-     *
-     * @return void
-     */
     protected function addIsCustomerShoppingListOwnerParam(ShoppingListTransfer $shoppingListTransfer): void
     {
         $customerTransfer = $this->getFactory()->getCustomerClient()->getCustomer();

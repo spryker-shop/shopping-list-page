@@ -11,15 +11,7 @@ use Generated\Shared\Transfer\QuoteTransfer;
 
 interface ShoppingListPageToMultiCartClientInterface
 {
-    /**
-     * @param int $idQuote
-     *
-     * @return \Generated\Shared\Transfer\QuoteTransfer|null
-     */
     public function findQuoteById(int $idQuote): ?QuoteTransfer;
 
-    /**
-     * @return \Generated\Shared\Transfer\QuoteTransfer
-     */
     public function getDefaultCart(): QuoteTransfer;
 }
