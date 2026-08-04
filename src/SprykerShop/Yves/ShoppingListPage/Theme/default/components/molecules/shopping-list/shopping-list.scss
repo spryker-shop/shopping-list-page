@@ -1,6 +1,13 @@
+@use 'sass:meta';
+@use 'sass:map';
+
 @mixin shopping-list-page-shopping-list($name: '.shopping-list') {
     #{$name} {
         width: 100%;
+
+        @if meta.mixin-exists(shopping-list-page-shopping-list-base-hook) {
+            @include shopping-list-page-shopping-list-base-hook;
+        }
 
         &__head {
             @include helper-font-weight(bold);
@@ -8,7 +15,7 @@
         }
 
         &__cell {
-            padding: map-get($setting-spacing, 'default') map-get($setting-spacing, 'small');
+            padding: map.get($setting-spacing, 'default') map.get($setting-spacing, 'small');
         }
 
         &__row {

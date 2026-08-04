@@ -1,7 +1,14 @@
+@use 'sass:meta';
+@use 'sass:map';
+
 @mixin shopping-list-page-shopping-list-product-quick-add($name: '.shopping-list-product-quick-add') {
     #{$name} {
+        @if meta.mixin-exists(shopping-list-page-shopping-list-product-quick-add-base-hook) {
+            @include shopping-list-page-shopping-list-product-quick-add-base-hook;
+        }
+
         #product-quick-add-form-wrapper {
-            padding: map-get($setting-spacing, 'default');
+            padding: map.get($setting-spacing, 'default');
             background-color: $setting-color-lighter;
         }
 

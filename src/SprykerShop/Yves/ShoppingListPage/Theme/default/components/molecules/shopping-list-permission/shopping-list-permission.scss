@@ -1,7 +1,14 @@
+@use 'sass:meta';
+@use 'sass:map';
+
 @mixin shopping-list-page-shopping-list-permission($name: '.shopping-list-permission') {
     #{$name} {
+        @if meta.mixin-exists(shopping-list-page-shopping-list-permission-base-hook) {
+            @include shopping-list-page-shopping-list-permission-base-hook;
+        }
+
         &__full-access {
-            color: map-get($setting-color-actions, 'success');
+            color: map.get($setting-color-actions, 'success');
         }
 
         @content;

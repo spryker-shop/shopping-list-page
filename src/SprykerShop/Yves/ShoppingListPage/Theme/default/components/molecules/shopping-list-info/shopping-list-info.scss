@@ -1,7 +1,14 @@
+@use 'sass:meta';
+@use 'sass:map';
+
 @mixin shopping-list-page-shopping-list-info($name: '.shopping-list-info') {
     #{$name} {
         background-color: $setting-color-lighter;
-        padding: map-get($setting-spacing, default);
+        padding: map.get($setting-spacing, default);
+
+        @if meta.mixin-exists(shopping-list-page-shopping-list-info-base-hook) {
+            @include shopping-list-page-shopping-list-info-base-hook;
+        }
 
         @content;
     }

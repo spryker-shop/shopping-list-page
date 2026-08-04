@@ -1,7 +1,14 @@
+@use 'sass:meta';
+@use 'sass:map';
+
 @mixin shopping-list-page-shopping-list-message($name: '.shopping-list-message') {
     #{$name} {
+        @if meta.mixin-exists(shopping-list-page-shopping-list-message-base-hook) {
+            @include shopping-list-page-shopping-list-message-base-hook;
+        }
+
         &__title {
-            color: map-get($setting-color-actions, 'alert');
+            color: map.get($setting-color-actions, 'alert');
         }
 
         &__text {

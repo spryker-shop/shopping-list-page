@@ -1,5 +1,11 @@
+@use 'sass:meta';
+
 @mixin shopping-list-page-share-list($name: '.share-list') {
     #{$name} {
+        @if meta.mixin-exists(shopping-list-page-share-list-base-hook) {
+            @include shopping-list-page-share-list-base-hook;
+        }
+
         &__list {
             max-height: 14.688rem;
             overflow: auto;

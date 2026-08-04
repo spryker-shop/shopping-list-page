@@ -1,5 +1,11 @@
+@use 'sass:meta';
+
 @mixin shopping-list-page-shopping-list-overview($name: '.shopping-list-overview') {
     #{$name} {
+        @if meta.mixin-exists(shopping-list-page-shopping-list-overview-base-hook) {
+            @include shopping-list-page-shopping-list-overview-base-hook;
+        }
+
         &__name {
             overflow: hidden;
             text-overflow: ellipsis;
