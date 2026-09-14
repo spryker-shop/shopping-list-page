@@ -11,10 +11,7 @@ use Symfony\Component\Validator\Constraint;
 
 class ShareShoppingListRequiredIdConstraint extends Constraint
 {
-    /**
-     * @return string
-     */
-    public function getTargets()
+    public function getTargets(): string
     {
         return static::CLASS_CONSTRAINT;
     }
